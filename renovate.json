@@ -2,5 +2,15 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
-  ]
+  ],
+  "postUpgradeTasks": {
+    "executionMode": "branch",
+    "fileFilters": [
+      "./version-bump.txt"
+    ],
+    "commands": [
+      "echo \"$RENOVATE_POST_UPGRADE_COMMAND_DATA_FILE\" > version-bump.txt"
+    ],
+    "dataFileTemplate": "[{{#each upgrades}}{\"depName\": \"{{{depName}}}\", \"currentValue\": \"{{{currentValue}}}\", \"newValue\": \"{{{newValue}}}\"}{{#unless @last}},{{\/unless}}{{\/each}}]"
+  }
 }
