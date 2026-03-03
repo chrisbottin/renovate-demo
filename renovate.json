@@ -3,7 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "allowedCommands": [".*"],
   "postUpgradeTasks": {
     "executionMode": "branch",
     "fileFilters": [
