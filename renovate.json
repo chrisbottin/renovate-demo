@@ -3,11 +3,12 @@
   "extends": [
     "config:recommended"
   ],
+  "baseBranchPatterns": ["main", "DD34"],
   "packageRules": [
     {
-      "matchBaseBranches": ["main"],
+      "matchBaseBranches": ["/^DD\\d+$/"],
       "matchUpdateTypes": ["minor", "major"],
       "enabled": false
     }
-  ],
+  ]
 }
