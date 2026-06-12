@@ -3,14 +3,11 @@
   "extends": [
     "config:recommended"
   ],
-  "postUpgradeTasks": {
-    "executionMode": "branch",
-    "fileFilters": [
-      "./version-bump.txt"
-    ],
-    "commands": [
-      "echo \"$RENOVATE_POST_UPGRADE_COMMAND_DATA_FILE\" > version-bump.txt"
-    ],
-    "dataFileTemplate": "[{{#each upgrades}}{\"depName\": \"{{{depName}}}\", \"currentValue\": \"{{{currentValue}}}\", \"newValue\": \"{{{newValue}}}\"}{{#unless @last}},{{\/unless}}{{\/each}}]"
-  }
+  "packageRules": [
+    {
+      "matchBaseBranches": ["main"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
+    }
+  ],
 }
