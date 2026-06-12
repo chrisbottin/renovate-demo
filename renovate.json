@@ -6,7 +6,7 @@
   "baseBranchPatterns": ["main", "DD34"],
   "packageRules": [
     {
-      "matchBaseBranches": ["/^DD\\d+$/"],
+      "matchBaseBranches": ["main", "DD34"],
       "matchUpdateTypes": ["minor", "major"],
       "enabled": false
     }
