@@ -6,6 +6,11 @@
   "baseBranchPatterns": ["main", "DD34"],
   "packageRules": [
     {
+      "description": "Split patch and minor updates",
+      "matchBaseBranches": ["main", "DD34"],
+      "separateMinorPatch": true
+    }, 
+    {
       "matchBaseBranches": ["main", "DD34"],
       "matchUpdateTypes": ["minor", "major"],
       "enabled": false
